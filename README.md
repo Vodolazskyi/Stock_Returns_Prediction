@@ -1,1 +1,1 @@
-# StockReturnsPreediction
+# Stock Returns Prediction
