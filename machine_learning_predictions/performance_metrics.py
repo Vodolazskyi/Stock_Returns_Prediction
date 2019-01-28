@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 
 from scipy.stats import ttest_1samp
+from sklearn.metrics import roc_auc_score
 
 
 def max_drawdown(cum_returns, invert=True):
@@ -103,3 +104,10 @@ def Sharpe(returns, n=252):
 
     sharpe = returns.mean() * np.sqrt(n) / returns.std()
     return sharpe
+
+
+def gini_coef(y_true, y_pred):
+    """
+    Function to calculate Gini coefficient
+    """
+    return 2*roc_auc_score(y_true, y_pred)-1
